@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // Function to detect the user's platform
+        function redirectToApp() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Check for iOS devices
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "youtube://Fc7NNcyZQYk";
+            }
+            // Check for Android devices
+            else if (/android/i.test(userAgent)) {
+                window.location.href = "vnd.youtube://Fc7NNcyZQYk";
+            } 
+            // Fallback to the web if no app is available
+            else {
+                window.location.href = "https://youtu.be/Fc7NNcyZQYk";
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToApp()">
+    <p>Redirecting to the YouTube app...</p>
+</body>
+</html>
